@@ -28,7 +28,7 @@ class HttpManager {
     if (useAuth) {
       // Replace 'YOUR_API_KEY' with your actual API key
       const apiKey =
-          '';
+          'di isi api key dari akun ketua registrasi akun cat api';
 
    //   PrintLog.printLog('Using API key: $apiKey');
 
