@@ -9,7 +9,7 @@ void main() {
     setUp(() {
       favoriteDatasource = FavouriteDatasource();
     });
-
+    
     test('get Favorite return correct data when successful', () async {
       final response = await favoriteDatasource.getFavorites();
 
