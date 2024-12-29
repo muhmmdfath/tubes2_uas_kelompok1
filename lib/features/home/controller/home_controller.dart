@@ -3,7 +3,7 @@
 import 'package:get/get.dart';
 import 'package:tubes2_uas_kelompok1/data/breeds/responsesmodel/breeds_responses_model.dart';
 import 'package:tubes2_uas_kelompok1/data/favorite/datasource/favorite_datasource.dart';
-import 'package:tubes2_uas_kelompok1/data/favorite/responsesmodel/favorite_responses_model_post.dart';
+import 'package:tubes2_uas_kelompok1/data/favorite/requestsmodel/favorite_requests_model.dart';
 import 'package:tubes2_uas_kelompok1/data/vote/datasource/vote_datasource.dart';
 import 'package:tubes2_uas_kelompok1/data/vote/requestsmodel/vote_requests_model.dart';
 
@@ -21,19 +21,19 @@ class HomeController extends GetxController{
 
   Future<void> fetchImages() async {
     try {
-      final result = await _datasource.getCreeds();
-      images.value = result;
+      final response = await _datasource.getBreeds();
+      images.value = response;
     } catch (e) {
       PrintLog.printLog("catch error $e");
     }
   }
 
   void onFavoritePressed(String imageId) {
-    final favorite = FavoriteRequestsModelPost(
+    final favorite = FavoriteRequestsModel(
       imageId: imageId, 
       subId: "1234",
     );
-    _favouriteDatasource.createFavorite(favorite);
+    _favouriteDatasource.createFavorites(favorite);
   }
 
   void onLikePressed(String imageId) {
