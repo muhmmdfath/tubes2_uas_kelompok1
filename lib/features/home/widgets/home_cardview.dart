@@ -1,11 +1,10 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:tubes2_uas_kelompok1/data/breeds/responsesmodel/breeds_responses_model.dart';
 
 class HomeCard extends StatelessWidget {
   final BreedsResponsesModel image;
-  final voidCallback onFavoritePressed;
-  final voidCallback onLikePressed;
+  final VoidCallback onFavoritePressed;
+  final VoidCallback onLikePressed;
   const HomeCard({super.key, required this.image, required this.onFavoritePressed, required this.onLikePressed});
 
   @override
@@ -56,11 +55,11 @@ class HomeCard extends StatelessWidget {
       children: [
         IconButton(
           onPressed: onFavoritePressed, 
-          icon: const Icon(Icon.favorite),
+          icon: const Icon(Icons.favorite),
         ),
         IconButton(
           onPressed: onLikePressed, 
-          icon: const Icon(Icon.thumb_up),
+          icon: const Icon(Icons.thumb_up),
         ),
       ],
     );
