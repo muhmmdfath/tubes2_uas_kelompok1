@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
+=======
+>>>>>>> 1aa782aaedd99cb7d4dc3255fb3c52b793f04d52
 import 'package:flutter/material.dart';
 import 'package:tubes2_uas_kelompok1/data/breeds/responsesmodel/breeds_responses_model.dart';
 
@@ -7,11 +10,15 @@ class HomeCard extends StatelessWidget {
   final BreedsResponsesModel image;
   final VoidCallback onFavoritePressed;
   final VoidCallback onLikePressed;
+<<<<<<< HEAD
   const HomeCard(
       {super.key,
       required this.image,
       required this.onFavoritePressed,
       required this.onLikePressed});
+=======
+  const HomeCard({super.key, required this.image, required this.onFavoritePressed, required this.onLikePressed});
+>>>>>>> 1aa782aaedd99cb7d4dc3255fb3c52b793f04d52
 
   @override
   Widget build(BuildContext context) {
@@ -30,9 +37,16 @@ class HomeCard extends StatelessWidget {
           ],
         ),
       ),
+<<<<<<< HEAD
     );
   }
 
+=======
+    ); 
+  }
+
+
+>>>>>>> 1aa782aaedd99cb7d4dc3255fb3c52b793f04d52
   Widget _buildTextSection() {
     return Column(
       children: [
@@ -49,7 +63,11 @@ class HomeCard extends StatelessWidget {
           style: const TextStyle(
             fontSize: 16,
           ),
+<<<<<<< HEAD
         )
+=======
+        ),
+>>>>>>> 1aa782aaedd99cb7d4dc3255fb3c52b793f04d52
       ],
     );
   }
@@ -59,14 +77,26 @@ class HomeCard extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         IconButton(
+<<<<<<< HEAD
           onPressed: onFavoritePressed,
           icon: const Icon(Icons.favorite),
         ),
         IconButton(
           onPressed: onLikePressed,
+=======
+          onPressed: onFavoritePressed, 
+          icon: const Icon(Icons.favorite),
+        ),
+        IconButton(
+          onPressed: onLikePressed, 
+>>>>>>> 1aa782aaedd99cb7d4dc3255fb3c52b793f04d52
           icon: const Icon(Icons.thumb_up),
         ),
       ],
     );
   }
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1aa782aaedd99cb7d4dc3255fb3c52b793f04d52
