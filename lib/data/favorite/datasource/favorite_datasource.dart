@@ -1,8 +1,11 @@
 import 'package:tubes2_uas_kelompok1/core/api_services/dio_module.dart';
 import 'package:tubes2_uas_kelompok1/core/api_services/endpoint.dart';
+import 'package:tubes2_uas_kelompok1/data/favorite/requestsmodel/favorite_requests_model.dart';
 import 'package:tubes2_uas_kelompok1/data/favorite/responsesmodel/favorite_responses_model.dart';
 import 'package:tubes2_uas_kelompok1/data/favorite/responsesmodel/favorite_responses_model_delete.dart';
 import 'package:tubes2_uas_kelompok1/data/favorite/responsesmodel/favorite_responses_model_get.dart';
+
+import '../responsesmodel/favorite_responses_model_post.dart';
 
 class FavouriteDatasource {
   final HttpManager httpManager = HttpManager();
@@ -35,6 +38,25 @@ class FavouriteDatasource {
     }
   }
 
+  Future<FavoriteResponsesModelPost?> createFavorites(
+    FavoriteRequestsModel data) async {
+  try {
+    final response = await httpManager.restRequest(
+        url: ApiConstants.favByIdGetEndpoint(favoriteId),
+        method: HttpMethods.post,
+        useAuth: true,
+      );
+
+      if (response['statusCode'] == 200) {
+        return FavoriteResponsesModelPost.fromJson(response['data']);
+      } else {
+        return null;
+      }
+  } catch (e) {
+    return  null;
+  }
+    }
+    
   Future<FavoritesResponsesModelDelete?> deleteFavorites(int favoriteId) async {
     try {
       final response = await httpManager.restRequest(
